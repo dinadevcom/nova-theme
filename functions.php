@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'DINOVATHEME_VERSION', '0.1.0' );
+define( 'DINOVATHEME_PATH', get_template_directory() );
+define( 'DINOVATHEME_URI', get_template_directory_uri() );
 
 if ( ! function_exists( 'dinovatheme_setup' ) ) {
 	/**
@@ -69,25 +71,6 @@ function dinovatheme_elementor_support() {
 }
 add_action( 'after_setup_theme', 'dinovatheme_elementor_support' );
 
-/**
- * Shows a gentle Elementor recommendation after activation.
- */
-function dinovatheme_elementor_admin_notice() {
-	if ( ! current_user_can( 'activate_plugins' ) || did_action( 'elementor/loaded' ) ) {
-		return;
-	}
-
-	$screen = get_current_screen();
-
-	if ( ! $screen || 'themes' !== $screen->id ) {
-		return;
-	}
-	?>
-	<div class="notice notice-info is-dismissible">
-		<p>
-			<?php esc_html_e( 'DinovaTheme is designed to work best with Elementor. Install Elementor to build full pages, headers, footers, and demo layouts.', 'dinovatheme' ); ?>
-		</p>
-	</div>
-	<?php
+if ( is_admin() ) {
+	require_once DINOVATHEME_PATH . '/inc/admin/welcome.php';
 }
-add_action( 'admin_notices', 'dinovatheme_elementor_admin_notice' );

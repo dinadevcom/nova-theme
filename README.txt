@@ -6,6 +6,8 @@ DinovaTheme is a lightweight, Elementor-first WordPress theme designed for clean
 
 DinovaTheme keeps the theme layer small and standards-focused. It provides WordPress theme essentials, clean typography, simple layout styling, RTL support, threaded comments, menus, custom logo support, featured images, and Elementor compatibility hooks.
 
+After activation, DinovaTheme shows a welcome setup panel in the WordPress dashboard. The panel links to Appearance > DinovaTheme, where site owners can install or activate recommended WordPress.org plugins.
+
 The theme is designed to pair with a future companion demo importer plugin. Demo import should live in a plugin, not in the theme, so the theme remains portable and suitable for WordPress.org review.
 
 == Requirements ==
