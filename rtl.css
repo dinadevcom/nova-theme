@@ -1,0 +1,14 @@
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.alignleft {
+	float: right;
+	margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.alignright {
+	float: left;
+	margin: 0.5rem 1.5rem 1rem 0;
+}
